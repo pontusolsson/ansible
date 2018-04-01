@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  gather_facts: False
+  
+  tasks:
+    - name: install python 3
+      raw: test -e /usr/bin/python || (pacman -Syu python)

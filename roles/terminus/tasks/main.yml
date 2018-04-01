@@ -1,0 +1,17 @@
+---
+
+- name: 'Install terminus'
+  pacman:
+    name: 'terminus-font'
+    state: 'latest'
+    update_cache: yes
+  become: yes
+
+- name: 'Set font to terminus'
+  template:
+    src: 'vconsole.conf.j2'
+    dest: '/etc/vconsole.conf'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+  become: yes

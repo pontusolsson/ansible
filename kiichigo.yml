@@ -1,0 +1,6 @@
+- hosts: all
+  tasks:
+    - include_role:
+        name: docker-compose
+    - include_role:
+        name: terminus

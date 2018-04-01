@@ -1,0 +1,17 @@
+---
+
+- name: 'Install docker'
+  pacman:
+    name: 'docker'
+    state: 'latest'
+    update_cache: yes
+  become: yes
+
+- name: 'Docker running'
+  systemd:
+    name: 'docker'
+    state: 'started'
+    enabled: yes
+  become: yes
+    
+   
